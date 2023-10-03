@@ -40,6 +40,11 @@ class CheatActivity : AppCompatActivity() {
         //have you cheated b4?
         if (clicked.clickedOrNot == true) {
             setAnswerShownResult(true)
+            val answerText = when {
+                answerIsTrue -> R.string.true_button
+                else -> R.string.false_button
+            }
+            binding.answerTextView.setText(answerText)
             Toast.makeText(
                 this,
                 "I know you cheated boi!",
